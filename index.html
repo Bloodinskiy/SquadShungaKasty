@@ -1510,7 +1510,7 @@
 
 @keyframes buttonGlow {
     0% {
-        opacity: 0.5;
+        opacity: 0.5;ы
         box-shadow: 0 0 15px rgba(255, 77, 148, 0.5);
     }
     100% {
@@ -1524,449 +1524,12 @@
     color: #ffffff !important;
     opacity: 1;
 }
-
-/* Стили для модального окна */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 10000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(5px);
-}
-
-.modal-content {
-    background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));
-    margin: auto;
-    padding: 30px;
-    border-radius: 20px;
-    border: 1px solid var(--border-color);
-    width: 90%;
-    max-width: 600px; /* Увеличил ширину */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Центрирование */
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-    max-height: 80vh; /* Ограничение высоты */
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-
-.modal-content h2 {
-    margin-top: 0;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.character-list {
-    max-height: 400px; /* Увеличил высоту списка */
-    overflow-y: auto;
-    margin: 20px 0;
-    flex: 1;
-}
-
-[data-theme="pink"] .modal-content {
-    background: linear-gradient(135deg, #2d1b2d, #451a45) !important;
-    border: 1px solid var(--border-color) !important;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    position: absolute;
-    right: 20px;
-    top: 15px;
-}
-
-.close:hover {
-    color: #fff;
-}
-
-.character-item {
-    padding: 15px;
-    margin: 10px 0;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.character-item:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: var(--accent-color);
-    transform: translateX(5px);
-}
-
-.character-item.selected {
-    background: rgba(255, 215, 0, 0.2); /* Золотой вместо неона */
-    border-color: #ffd700; /* Золотая обводка */
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4); /* Золотое свечение */
-}
-
-.character-name {
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: var(--text-primary);
-}
-
-.character-description {
-    font-size: 0.9em;
-    color: var(--text-secondary);
-}
-
-.modal-actions {
-    display: flex;
-    gap: 15px;
-    justify-content: space-between; /* Разделил кнопки */
-    margin-top: 20px;
-    flex-shrink: 0;
-}
-
-.modal-btn {
-    padding: 10px 25px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.modal-btn.cancel {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--text-primary);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.modal-btn.confirm {
-    background: linear-gradient(135deg, var(--accent-color), #e2337a);
-    color: white;
-}
-
-.modal-btn.remove {
-    background: linear-gradient(135deg, #ff4444, #cc0000); /* Красный для удаления */
-    color: white;
-}
-
-.modal-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Стиль для ВСЕХ карточек с курсором-указателем */
-.member-card {
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.member-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3); /* Золотое свечение */
-}
-
-/* Золотое свечение для заполненных карточек */
-.member-card:not(.vacant) {
-    border: 1px solid rgba(255, 215, 0, 0.3) !important;
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2) !important;
-}
-
-/* Особый стиль для вакантных карточек */
-.member-card.vacant {
-    border: 2px dashed rgba(255, 255, 255, 0.3) !important;
-}
-
-.member-card.vacant:hover {
-    border: 2px dashed rgba(255, 215, 0, 0.6) !important; /* Золотая пунктирная линия */
-}
-
-/* Индикатор что карточка заполнена */
-.member-card:not(.vacant)::after {
-    content: '✓';
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 20px;
-    height: 20px;
-    background: rgba(255, 215, 0, 0.9);
-    color: #000;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-/* Стили для Discord аутентификации */
-.discord-auth {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1001;
-}
-
-.auth-btn {
-    background: linear-gradient(135deg, #5865F2, #4752c4);
-    color: white;
-    border: none;
-    border-radius: 25px;
-    padding: 10px 20px;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(88, 101, 242, 0.3);
-}
-
-.auth-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(88, 101, 242, 0.4);
-}
-
-.auth-btn.logout {
-    background: linear-gradient(135deg, #ed4245, #c03537);
-}
-
-.user-panel {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    padding: 8px 15px;
-    border-radius: 25px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.user-avatar {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-}
-
-.user-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.username {
-    font-weight: 600;
-    font-size: 0.9em;
-    color: white;
-}
-
-.user-role {
-    font-size: 0.75em;
-    color: #cccccc;
-}
-
-.editor-badge {
-    background: linear-gradient(135deg, #ffd700, #ffa500);
-    color: #000;
-    padding: 2px 8px;
-    border-radius: 10px;
-    font-size: 0.7em;
-    font-weight: 600;
-}
-
-.reader-badge {
-    background: linear-gradient(135deg, #5865F2, #4752c4);
-    color: white;
-    padding: 2px 8px;
-    border-radius: 10px;
-    font-size: 0.7em;
-    font-weight: 600;
-}
-
-.logout-btn {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
-    border-radius: 50%;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.logout-btn:hover {
-    background: rgba(237, 66, 69, 0.2);
-    border-color: #ed4245;
-}
-
-/* Стили для административной панели */
-.admin-panel {
-    display: none;
-    position: fixed;
-    top: 80px;
-    right: 20px;
-    background: rgba(30, 30, 30, 0.95);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    padding: 20px;
-    width: 300px;
-    z-index: 1000;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-.admin-panel h3 {
-    margin-top: 0;
-    margin-bottom: 15px;
-    color: white;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding-bottom: 10px;
-}
-
-.admin-section {
-    margin-bottom: 20px;
-}
-
-.admin-section h4 {
-    color: #ffd700;
-    margin-bottom: 10px;
-    font-size: 1em;
-}
-
-.user-list {
-    max-height: 200px;
-    overflow-y: auto;
-    margin-bottom: 15px;
-}
-
-.user-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 10px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    margin-bottom: 8px;
-}
-
-.user-item-info {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.user-item-avatar {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-}
-
-.user-item-name {
-    font-size: 0.85em;
-    color: white;
-}
-
-.role-select {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
-    color: white;
-    padding: 4px 8px;
-    font-size: 0.8em;
-}
-
-.admin-btn {
-    background: linear-gradient(135deg, #5865F2, #4752c4);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 8px 15px;
-    font-size: 0.85em;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.admin-btn:hover {
-    background: linear-gradient(135deg, #4752c4, #3a45a8);
-}
-
-.admin-btn.save {
-    background: linear-gradient(135deg, #57F287, #23a55a);
-}
-
-.admin-btn.save:hover {
-    background: linear-gradient(135deg, #23a55a, #1c8a48);
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-    .discord-auth {
-        top: 10px;
-        right: 10px;
-    }
-    
-    .user-panel {
-        padding: 6px 12px;
-    }
-    
-    .username {
-        display: none;
-    }
-    
-    .admin-panel {
-        width: 280px;
-        right: 10px;
-    }
-}
     </style>
 </head>
 <body>
     <!-- WebGL Canvas -->
     <canvas id="webgl-canvas"></canvas>
     
-    <!-- Discord аутентификация -->
-<div class="discord-auth">
-    <div id="authContainer">
-        <button class="auth-btn" id="loginBtn">
-            <i class="fab fa-discord"></i> Войти через Discord
-        </button>
-    </div>
-</div>
-
-<!-- Административная панель -->
-<div class="admin-panel" id="adminPanel">
-    <h3><i class="fas fa-crown"></i> Панель управления</h3>
-    
-    <div class="admin-section">
-        <h4>Управление пользователями</h4>
-        <div class="user-list" id="userList">
-            <!-- Список пользователей будет заполняться динамически -->
-        </div>
-        <button class="admin-btn save" id="saveRolesBtn">
-            <i class="fas fa-save"></i> Сохранить изменения
-        </button>
-    </div>
-    
-    <div class="admin-section">
-        <h4>Статистика</h4>
-        <div style="color: white; font-size: 0.9em;">
-            <p>Всего пользователей: <span id="totalUsers">0</span></p>
-            <p>Редакторов: <span id="editorCount">0</span></p>
-            <p>Читателей: <span id="readerCount">0</span></p>
-        </div>
-    </div>
-</div>
-
     <!-- Навигация -->
     <nav class="navbar">
         <div class="nav-container">
@@ -2510,7 +2073,8 @@
                 </div>
             </div>
         </div>
-<!-- Услуги -->
+
+       <!-- Услуги -->
 <div id="application" class="section">
     <div class="page-header">
         <center>
@@ -2522,17 +2086,14 @@
     </div>
 
     <!-- Сетка услуг -->
-    <div class="ranks-grid">
-        <!-- Базовые услуги -->
-        <div class="rank-card" data-service="shikimochi">
-            <div class="rank-icon"><i class="fas fa-paw"></i></div>
-            <h3 class="rank-title">С должности Shikimochi</h3>
-            <div class="rank-points">Базовые услуги</div>
-            <div class="rank-cooldown">
-                <i class="fas fa-money-bill-alt"></i> 
-                Цена: <span class="price-value">?¥</span>
-            </div>
-            <ul class="rule-list service-list">
+            <div class="ranks-grid">
+                <!-- Базовые услуги -->
+                <div class="rank-card">
+                    <div class="rank-icon"><i class="fas fa-paw"></i></div>
+                    <h3 class="rank-title">С должности Shikimochi</h3>
+                    <div class="rank-points">Базовые услуги</div>
+                    <div class="rank-cooldown"><i class="fas fa-money-bill-alt"></i> Цена: ?¥</div>
+                     <ul class="rule-list">
                 <li>Компания и беседа</li>
                 <li>Прогулки под луной</li>
                 <li>Поэтические вечера</li>
@@ -2540,22 +2101,15 @@
                 <li>Танцевальные номера</li>
                 <li>Игры и развлечения</li>
             </ul>
-            <div class="service-actions">
-                <button class="edit-price-btn" onclick="editPrice(this)">✎ Цена</button>
-                <button class="edit-service-btn" onclick="editService(this)">✎ Услуги</button>
-            </div>
-        </div>
-        
-        <!-- Премиум услуги -->
-        <div class="rank-card" data-service="tsukeshi">
-            <div class="rank-icon"><i class="fas fa-bolt"></i></div>
-            <h3 class="rank-title">С должности Tsukeshi</h3>
-            <div class="rank-points">Премиум услуги</div>
-            <div class="rank-cooldown">
-                <i class="fas fa-money-bill-alt"></i> 
-                Цена: <span class="price-value">?¥</span>
-            </div>
-            <ul class="rule-list service-list">
+                </div>
+                
+               <!-- Премиум услуги -->
+                <div class="rank-card">
+                    <div class="rank-icon"><i class="fas fa-bolt"></i></div>
+                    <h3 class="rank-title">С должности Tsukeshi</h3>
+                    <div class="rank-points">Премиум услуги</div>
+                    <div class="rank-cooldown"><i class="fas fa-money-bill-alt"></i> Цена: ?¥</div>
+                     <ul class="rule-list">
                 <li>Частные ужины при свечах</li>
                 <li>Персональные концерты</li>
                 <li>Эксклюзивные танцевальные шоу</li>
@@ -2563,549 +2117,66 @@
                 <li>Ночные прогулки в саду</li>
                 <li>Индивидуальные уроки искусства</li>
             </ul>
-            <div class="service-actions">
-                <button class="edit-price-btn" onclick="editPrice(this)">✎ Цена</button>
-                <button class="edit-service-btn" onclick="editService(this)">✎ Услуги</button>
-            </div>
-        </div>
-        
-        <!-- Элитные услуги -->
-        <div class="rank-card" data-service="sancha">
-            <div class="rank-icon"><i class="fas fa-fire"></i></div>
-            <h3 class="rank-title">С должности Sancha</h3>
-            <div class="rank-points">Элитные услуги</div>
-            <div class="rank-cooldown">
-                <i class="fas fa-money-bill-alt"></i> 
-                Цена: <span class="price-value">?¥</span>
-            </div>
-            <ul class="rule-list service-list">
+                </div>
+                
+                 <!-- Элитные услуги -->
+                <div class="rank-card">
+                    <div class="rank-icon"><i class="fas fa-fire"></i></div>
+                    <h3 class="rank-title">С должности Sancha</h3>
+                    <div class="rank-points">Элитные услуги</div>
+                    <div class="rank-cooldown"><i class="fas fa-money-bill-alt"></i> Цена: ?¥</div>
+                     <ul class="rule-list">
                 <li>Сопровождение на мероприятия</li>
                 <li>Конфиденциальные встречи</li>
                 <li>Сбор информации по запросу</li>
                 <li>Выездные мероприятия</li>
             </ul>
-            <div class="service-actions">
-                <button class="edit-price-btn" onclick="editPrice(this)">✎ Цена</button>
-                <button class="edit-service-btn" onclick="editService(this)">✎ Услуги</button>
-            </div>
-        </div>
-        
-        <!-- Вечерние услуги -->
-        <div class="rank-card" data-service="yobidama">
-            <div class="rank-icon"><i class="fas fa-bullseye"></i></div>
-            <h3 class="rank-title">С должности Yobidama</h3>
-            <div class="rank-points">Вечерние услуги</div>
-            <div class="rank-cooldown">
-                <i class="fas fa-money-bill-alt"></i> 
-                Цена: <span class="price-value">?¥</span>
-            </div>
-            <ul class="rule-list service-list">
+                </div>
+                
+                <!-- Вечерние услуги -->
+                <div class="rank-card">
+                    <div class="rank-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3 class="rank-title">С должности Yobidama</h3>
+                    <div class="rank-points">Вечерние услуги</div>
+                    <div class="rank-cooldown"><i class="fas fa-money-bill-alt"></i> Цена: ?¥</div>
+                    <ul class="rule-list">
                 <li>Дегустация редких вин</li>
                 <li>Ночные чайные церемонии</li>
                 <li>Астрологические консультации</li>
                 <li>Магические предсказания</li>
             </ul>
-            <div class="service-actions">
-                <button class="edit-price-btn" onclick="editPrice(this)">✎ Цена</button>
-                <button class="edit-service-btn" onclick="editService(this)">✎ Услуги</button>
-            </div>
-        </div>
-        
-        <!-- Специальные услуги -->
-        <div class="rank-card" data-service="koshi">
-            <div class="rank-icon"><i class="fas fa-star"></i></div>
-            <h3 class="rank-title">С должности Koshi</h3>
-            <div class="rank-points">Специальные услуги</div>
-            <div class="rank-cooldown">
-                <i class="fas fa-money-bill-alt"></i> 
-                Цена: <span class="price-value">?¥</span>
-            </div>
-            <ul class="rule-list service-list">
+                </div>
+                
+                <!-- Специальные услуги  -->
+                <div class="rank-card">
+                    <div class="rank-icon"><i class="fas fa-star"></i></div>
+                    <h3 class="rank-title">С должности Koshi</h3>
+                    <div class="rank-points">Специальные услуги </div>
+                    <div class="rank-cooldown"><i class="fas fa-money-bill-alt"></i> Цена: ?¥</div>
+                    <ul class="rule-list">
                 <li>Обучение этикету и манерам</li>
                 <li>Помощь в светских делах</li>
                 <li>Посредничество в переговорах</li>
                 <li>Организация тайных встреч</li>
                 <li>Решение деликатных вопросов</li>
             </ul>
-            <div class="service-actions">
-                <button class="edit-price-btn" onclick="editPrice(this)">✎ Цена</button>
-                <button class="edit-service-btn" onclick="editService(this)">✎ Услуги</button>
-            </div>
-        </div>
+                </div>
 
-        <!-- Эксклюзив от Ойран -->
-        <div class="rank-card" data-service="taiyou">
-            <div class="rank-icon"><i class="fas fa-crown"></i></div>
-            <h3 class="rank-title">С должности Taiyou</h3>
-            <div class="rank-points">Эксклюзив от Ойран</div>
-            <div class="rank-cooldown">
-                <i class="fas fa-money-bill-alt"></i> 
-                Цена: <span class="price-value">?¥</span>
-            </div>
-            <ul class="rule-list service-list">
+                <!-- Эксклюзив от Ойран  -->
+                <div class="rank-card">
+                    <div class="rank-icon"><i class="fas fa-star"></i></div>
+                    <h3 class="rank-title">С должности Taiyou</h3>
+                    <div class="rank-points">Эксклюзив от Ойран</div>
+                    <div class="rank-cooldown"><i class="fas fa-money-bill-alt"></i> Цена: ?¥</div>
+                    <ul class="rule-list">
                 <li>Личное внимание высшего ранга</li>
                 <li>Доступ к закрытым событиям</li>
                 <li>Приоритетное бронирование</li>
                 <li>Эксклюзивные условия обслуживания</li>
             </ul>
-            <div class="service-actions">
-                <button class="edit-price-btn" onclick="editPrice(this)">✎ Цена</button>
-                <button class="edit-service-btn" onclick="editService(this)">✎ Услуги</button>
             </div>
         </div>
     </div>
-</div>
-
-<!-- Модальное окно для редактирования услуг -->
-<div id="serviceModal" class="modal">
-    <div class="modal-content service-modal-content">
-        <span class="close" onclick="closeServiceModal()">&times;</span>
-        <h2>Редактирование услуг</h2>
-        <div class="modal-body">
-            <div class="service-edit-container">
-                <div class="service-list-container">
-                    <h3>Список услуг:</h3>
-                    <div id="serviceItems" class="service-items">
-                        <!-- Список услуг будет добавляться динамически -->
-                    </div>
-                    <button class="add-service-btn" onclick="addNewServiceItem()">
-                        <i class="fas fa-plus"></i> Добавить услугу
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="modal-actions">
-            <button class="modal-btn cancel" onclick="closeServiceModal()">Отмена</button>
-            <button class="modal-btn confirm" onclick="saveServices()">Сохранить</button>
-        </div>
-    </div>
-</div>
-
-<style>
-/* Стили для кнопок редактирования в карточках */
-.service-actions {
-    display: flex;
-    gap: 10px;
-    justify-content: flex-end;
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.edit-price-btn, .edit-service-btn {
-    background: rgba(255, 215, 0, 0.2);
-    border: 1px solid rgba(255, 215, 0, 0.5);
-    color: #ffd700;
-    border-radius: 20px;
-    padding: 8px 15px;
-    cursor: pointer;
-    font-size: 0.85em;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.edit-price-btn:hover, .edit-service-btn:hover {
-    background: rgba(255, 215, 0, 0.4);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
-}
-
-/* Стили для модального окна услуг */
-.service-modal-content {
-    max-width: 700px;
-    width: 90%;
-    max-height: 85vh;
-    display: flex;
-    flex-direction: column;
-}
-
-.modal-body {
-    flex: 1;
-    overflow-y: auto;
-    padding: 10px 0;
-}
-
-.service-edit-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.service-list-container h3 {
-    margin-bottom: 15px;
-    color: var(--gold);
-    border-bottom: 1px solid rgba(255, 215, 0, 0.3);
-    padding-bottom: 8px;
-}
-
-.service-items {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-    max-height: 300px;
-    overflow-y: auto;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-}
-
-.service-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 15px;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-}
-
-.service-item:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 215, 0, 0.3);
-}
-
-.service-item input {
-    flex: 1;
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 1em;
-    padding: 8px 12px;
-    border-radius: 6px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.service-item input:focus {
-    outline: none;
-    border-color: var(--gold);
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.remove-service-btn {
-    background: rgba(255, 0, 0, 0.3);
-    border: none;
-    color: white;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-
-.remove-service-btn:hover {
-    background: rgba(255, 0, 0, 0.5);
-    transform: scale(1.1);
-}
-
-.add-service-btn {
-    width: 100%;
-    padding: 12px;
-    background: rgba(255, 215, 0, 0.2);
-    border: 1px dashed rgba(255, 215, 0, 0.5);
-    color: #ffd700;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
-
-.add-service-btn:hover {
-    background: rgba(255, 215, 0, 0.3);
-    border-style: solid;
-    transform: translateY(-2px);
-}
-
-/* Стили для модального окна цен */
-.price-modal-content {
-    max-width: 400px;
-}
-
-.price-input-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin: 20px 0;
-}
-
-.price-input-container label {
-    font-weight: 600;
-    color: var(--gold);
-    margin-bottom: 5px;
-}
-
-.price-input-large {
-    width: 100%;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    color: white;
-    font-size: 1.2em;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-
-.price-input-large:focus {
-    outline: none;
-    border-color: var(--gold);
-    background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-    .service-actions {
-        flex-direction: column;
-    }
-    
-    .service-modal-content {
-        width: 95%;
-        margin: 20px auto;
-    }
-    
-    .service-item {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
-    .service-item input {
-        margin-bottom: 10px;
-    }
-}
-</style>
-
-<script>
-// Переменные для работы с модальными окнами
-let currentServiceCard = null;
-let currentServiceType = null;
-
-// Функция для редактирования цены
-function editPrice(button) {
-    currentServiceCard = button.closest('.rank-card');
-    const priceElement = currentServiceCard.querySelector('.price-value');
-    const currentPrice = priceElement.textContent;
-    
-    // Создаем модальное окно для редактирования цены
-    const modal = document.createElement('div');
-    modal.className = 'modal';
-    modal.style.display = 'block';
-    modal.innerHTML = `
-        <div class="modal-content price-modal-content">
-            <span class="close" onclick="this.parentElement.parentElement.style.display='none'">&times;</span>
-            <h2>Редактирование цены</h2>
-            <div class="price-input-container">
-                <label>Введите цену:</label>
-                <input type="text" class="price-input-large" value="${currentPrice}" placeholder="Например: 1000¥">
-            </div>
-            <div class="modal-actions">
-                <button class="modal-btn cancel" onclick="this.closest('.modal').style.display='none'">Отмена</button>
-                <button class="modal-btn confirm" onclick="savePriceFromModal(this)">Сохранить</button>
-            </div>
-        </div>
-    `;
-    
-    document.body.appendChild(modal);
-    
-    // Фокусируемся на поле ввода
-    setTimeout(() => {
-        modal.querySelector('.price-input-large').focus();
-        modal.querySelector('.price-input-large').select();
-    }, 100);
-}
-
-// Функция сохранения цены из модального окна
-function savePriceFromModal(button) {
-    const modal = button.closest('.modal');
-    const priceInput = modal.querySelector('.price-input-large');
-    const newPrice = priceInput.value.trim();
-    
-    if (newPrice && currentServiceCard) {
-        const priceElement = currentServiceCard.querySelector('.price-value');
-        priceElement.textContent = newPrice;
-        
-        // Сохраняем в localStorage
-        const serviceType = currentServiceCard.dataset.service;
-        savePriceToStorage(serviceType, newPrice);
-    }
-    
-    modal.style.display = 'none';
-    modal.remove();
-    currentServiceCard = null;
-}
-
-// Функция для редактирования услуг
-function editService(button) {
-    currentServiceCard = button.closest('.rank-card');
-    currentServiceType = currentServiceCard.dataset.service;
-    
-    // Получаем текущие услуги
-    const serviceList = currentServiceCard.querySelector('.service-list');
-    const currentServices = Array.from(serviceList.querySelectorAll('li')).map(li => li.textContent);
-    
-    // Заполняем модальное окно
-    const serviceItemsContainer = document.getElementById('serviceItems');
-    serviceItemsContainer.innerHTML = '';
-    
-    currentServices.forEach(service => {
-        addServiceItemToModal(service);
-    });
-    
-    // Если услуг нет, добавляем пустое поле
-    if (currentServices.length === 0) {
-        addServiceItemToModal('');
-    }
-    
-    // Показываем модальное окно
-    document.getElementById('serviceModal').style.display = 'block';
-    
-    // Фокусируемся на первом поле
-    setTimeout(() => {
-        const firstInput = serviceItemsContainer.querySelector('input');
-        if (firstInput) firstInput.focus();
-    }, 100);
-}
-
-// Функция добавления элемента услуги в модальное окно
-function addServiceItemToModal(serviceText = '') {
-    const serviceItemsContainer = document.getElementById('serviceItems');
-    
-    const serviceItem = document.createElement('div');
-    serviceItem.className = 'service-item';
-    serviceItem.innerHTML = `
-        <input type="text" value="${serviceText}" placeholder="Введите услугу">
-        <button class="remove-service-btn" onclick="removeServiceItemFromModal(this)">✕</button>
-    `;
-    
-    serviceItemsContainer.appendChild(serviceItem);
-    
-    // Автоматически фокусируемся на новом поле
-    serviceItem.querySelector('input').focus();
-}
-
-// Функция добавления новой услуги в модальном окне
-function addNewServiceItem() {
-    addServiceItemToModal('');
-    
-    // Прокручиваем к новому элементу
-    const serviceItemsContainer = document.getElementById('serviceItems');
-    serviceItemsContainer.scrollTop = serviceItemsContainer.scrollHeight;
-}
-
-// Функция удаления услуги из модального окна
-function removeServiceItemFromModal(button) {
-    const serviceItem = button.closest('.service-item');
-    serviceItem.remove();
-    
-    // Если удалили все услуги, добавляем пустое поле
-    const serviceItemsContainer = document.getElementById('serviceItems');
-    if (serviceItemsContainer.children.length === 0) {
-        addServiceItemToModal('');
-    }
-}
-
-// Функция сохранения услуг
-function saveServices() {
-    if (!currentServiceCard) return;
-    
-    const serviceItemsContainer = document.getElementById('serviceItems');
-    const serviceInputs = serviceItemsContainer.querySelectorAll('input');
-    const newServices = Array.from(serviceInputs)
-        .map(input => input.value.trim())
-        .filter(service => service !== ''); // Убираем пустые
-    
-    // Обновляем список услуг в карточке
-    const serviceList = currentServiceCard.querySelector('.service-list');
-    serviceList.innerHTML = newServices.map(service => `<li>${service}</li>`).join('');
-    
-    // Сохраняем в localStorage
-    saveServicesToStorage(currentServiceType, newServices);
-    
-    // Закрываем модальное окно
-    closeServiceModal();
-}
-
-// Функция закрытия модального окна услуг
-function closeServiceModal() {
-    document.getElementById('serviceModal').style.display = 'none';
-    currentServiceCard = null;
-    currentServiceType = null;
-}
-
-// Функция сохранения цены в localStorage
-function savePriceToStorage(serviceType, price) {
-    const prices = JSON.parse(localStorage.getItem('servicePrices') || '{}');
-    prices[serviceType] = price;
-    localStorage.setItem('servicePrices', JSON.stringify(prices));
-}
-
-// Функция сохранения услуг в localStorage
-function saveServicesToStorage(serviceType, services) {
-    const allServices = JSON.parse(localStorage.getItem('serviceList') || '{}');
-    allServices[serviceType] = services;
-    localStorage.setItem('serviceList', JSON.stringify(allServices));
-}
-
-// Функция загрузки цен из localStorage
-function loadPricesFromStorage() {
-    const prices = JSON.parse(localStorage.getItem('servicePrices') || '{}');
-    
-    document.querySelectorAll('.rank-card').forEach(card => {
-        const serviceType = card.dataset.service;
-        const priceElement = card.querySelector('.price-value');
-        
-        if (prices[serviceType] && prices[serviceType] !== '?¥') {
-            priceElement.textContent = prices[serviceType];
-        }
-    });
-}
-
-// Функция загрузки услуг из localStorage
-function loadServicesFromStorage() {
-    const allServices = JSON.parse(localStorage.getItem('serviceList') || '{}');
-    
-    document.querySelectorAll('.rank-card').forEach(card => {
-        const serviceType = card.dataset.service;
-        const serviceList = card.querySelector('.service-list');
-        
-        if (allServices[serviceType]) {
-            serviceList.innerHTML = allServices[serviceType].map(service => `<li>${service}</li>`).join('');
-        }
-    });
-}
-
-// Закрытие модального окна при клике вне его
-window.addEventListener('click', function(event) {
-    const serviceModal = document.getElementById('serviceModal');
-    if (event.target === serviceModal) {
-        closeServiceModal();
-    }
-    
-    const modals = document.querySelectorAll('.modal');
-    modals.forEach(modal => {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-            modal.remove();
-        }
-    });
-});
-
-// Загружаем сохраненные данные при загрузке страницы
-document.addEventListener('DOMContentLoaded', function() {
-    loadPricesFromStorage();
-    loadServicesFromStorage();
-});
-</script>
 
     <div class="footer">
         <p>© 2025 Отряд Шунга | kasty.su:27027 | by bloodinskiy</p>
@@ -3114,436 +2185,111 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-<script>
-let currentCard = null;
-let originalRank = '';
-let cardsInitialized = false;
-
-// Функция для сохранения всех данных в localStorage
-function saveAllData() {
-    const allCards = document.querySelectorAll('.member-card');
-    const dataToSave = {};
     
-    allCards.forEach((card, index) => {
-        const cardId = card.dataset.cardId || `card_${index}`;
-        card.dataset.cardId = cardId;
-        
-        dataToSave[cardId] = {
-            name: card.querySelector('.member-name').textContent,
-            rank: card.querySelector('.member-rank').textContent,
-            role: card.querySelector('.member-role').textContent,
-            isVacant: card.classList.contains('vacant')
-        };
-    });
-    
-    localStorage.setItem('teamMembersData', JSON.stringify(dataToSave));
-}
-
-// Функция для загрузки данных из localStorage
-function loadAllData() {
-    const savedData = localStorage.getItem('teamMembersData');
-    if (!savedData) return;
-    
-    const data = JSON.parse(savedData);
-    
-    document.querySelectorAll('.member-card').forEach((card, index) => {
-        const cardId = card.dataset.cardId || `card_${index}`;
-        card.dataset.cardId = cardId;
-        
-        if (data[cardId]) {
-            const cardData = data[cardId];
-            card.querySelector('.member-name').textContent = cardData.name;
-            card.querySelector('.member-rank').textContent = cardData.rank;
-            card.querySelector('.member-role').textContent = cardData.role;
-            
-            if (cardData.isVacant) {
-                card.classList.add('vacant');
-            } else {
-                card.classList.remove('vacant');
-            }
-        }
-    });
-}
-
-// Функция для генерации уникального ID карточки
-function generateCardId(card) {
-    const category = card.closest('.team-category');
-    const categoryTitle = category ? category.querySelector('.category-title').textContent : 'unknown';
-    const cardsInCategory = Array.from(category.querySelectorAll('.member-card'));
-    const cardIndex = cardsInCategory.indexOf(card);
-    
-    return `${categoryTitle.replace(/\s+/g, '_')}_${cardIndex}`;
-}
-
-// Функция проверки, является ли карточка Daki или Gyutaro
-function isCommandCard(card) {
-    const name = card.querySelector('.member-name').textContent;
-    return name.includes('Daki') || name.includes('Gyutaro') || name.includes('Даки') || name.includes('Гютаро');
-}
-
-// Функция для открытия модального окна редактирования
-function openCharacterModal(card) {
-    currentCard = card;
-    const modal = document.getElementById('characterModal');
-    const isVacant = card.classList.contains('vacant');
-    const isCommand = isCommandCard(card);
-    
-    // Генерируем ID для карточки если его нет
-    if (!card.dataset.cardId) {
-        card.dataset.cardId = generateCardId(card);
-    }
-    
-    // Получаем текущие данные карточки
-    const currentName = card.querySelector('.member-name').textContent;
-    const currentRole = card.querySelector('.member-role').textContent;
-    const currentRank = card.querySelector('.member-rank').textContent;
-    
-    // Сохраняем исходный ранг для восстановления при удалении
-    originalRank = currentRank;
-    
-    // Разделяем имя и фамилию (только если не командная карточка)
-    let firstName = '';
-    let lastName = '';
-    if (currentName !== '[Вакантно]' && !isCommand) {
-        const nameParts = currentName.split(' ');
-        firstName = nameParts[0] || '';
-        lastName = nameParts.slice(1).join(' ') || '';
-    } else if (currentName !== '[Вакантно]' && isCommand) {
-        // Для командных карточек используем полное имя как есть
-        firstName = currentName;
-    }
-    
-    // Создаем HTML формы в зависимости от типа карточки
-    let nameFieldsHTML = '';
-    
-    if (isCommand) {
-        // Для Daki и Gyutaro - только одно поле имени
-        nameFieldsHTML = `
-            <div class="form-group">
-                <label class="field-label">Имя *</label>
-                <input type="text" class="edit-input firstName" placeholder="Введите имя" value="${firstName}" required>
-            </div>
-        `;
-    } else {
-        // Для остальных - имя и фамилия
-        nameFieldsHTML = `
-            <div class="form-group">
-                <label class="field-label">Имя *</label>
-                <input type="text" class="edit-input firstName" placeholder="Введите имя" value="${firstName}" required>
-            </div>
-            
-            <div class="form-group">
-                <label class="field-label">Фамилия</label>
-                <input type="text" class="edit-input lastName" placeholder="Введите фамилию" value="${lastName}">
-            </div>
-        `;
-    }
-    
-    // Заполняем модальное окно полями для ввода
-    const modalContent = `
-        <div class="edit-form">
-            ${nameFieldsHTML}
-            
-            <div class="form-group">
-                <label class="field-label">Должность/Ранг *</label>
-                <input type="text" class="edit-input edit-rank" placeholder="Введите должность" value="${currentRank}" required>
-            </div>
-            
-            <div class="form-group">
-                <label class="field-label">Описание *</label>
-                <textarea class="edit-textarea edit-role" placeholder="Опишите обязанности и характеристики" required>${currentRole !== 'Свободная позиция' ? currentRole : ''}</textarea>
-            </div>
-            
-            <div class="modal-actions">
-                <button class="modal-btn cancel" type="button">Отмена</button>
-                <button class="modal-btn confirm" type="button">${isVacant ? 'Добавить' : 'Сохранить'}</button>
-                ${!isVacant ? '<button class="modal-btn remove" type="button">Удалить</button>' : ''}
-            </div>
-        </div>
-    `;
-    
-    document.querySelector('.character-list').innerHTML = modalContent;
-    modal.style.display = 'block';
-    
-    // Добавляем обработчики для кнопок модального окна
-    const cancelBtn = modal.querySelector('.cancel');
-    const confirmBtn = modal.querySelector('.confirm');
-    const removeBtn = modal.querySelector('.remove');
-    
-    cancelBtn.addEventListener('click', closeModal);
-    confirmBtn.addEventListener('click', applyCharacterSelection);
-    if (removeBtn) {
-        removeBtn.addEventListener('click', removeCharacter);
-    }
-    
-    // Фокусируемся на первом поле
-    setTimeout(() => {
-        const firstNameInput = modal.querySelector('.firstName');
-        if (firstNameInput) firstNameInput.focus();
-    }, 100);
-}
-
-// Функция сохранения данных
-function applyCharacterSelection() {
-    if (!currentCard) return;
-    
-    const modal = document.getElementById('characterModal');
-    const firstName = modal.querySelector('.firstName').value.trim();
-    const lastName = modal.querySelector('.lastName') ? modal.querySelector('.lastName').value.trim() : '';
-    const rank = modal.querySelector('.edit-rank').value.trim();
-    const role = modal.querySelector('.edit-role').value.trim();
-    const isCommand = isCommandCard(currentCard);
-    
-    // Проверяем обязательные поля
-    if (!firstName) {
-        alert('Пожалуйста, введите имя');
-        modal.querySelector('.firstName').focus();
-        return;
-    }
-    if (!rank) {
-        alert('Пожалуйста, введите должность/ранг');
-        modal.querySelector('.edit-rank').focus();
-        return;
-    }
-    if (!role) {
-        alert('Пожалуйста, введите описание');
-        modal.querySelector('.edit-role').focus();
-        return;
-    }
-    
-    // Формируем полное имя
-    let fullName = firstName;
-    if (!isCommand && lastName) {
-        fullName = `${firstName} ${lastName}`;
-    }
-    
-    // Обновляем карточку
-    const nameElement = currentCard.querySelector('.member-name');
-    const rankElement = currentCard.querySelector('.member-rank');
-    const roleElement = currentCard.querySelector('.member-role');
-    
-    nameElement.textContent = fullName;
-    rankElement.textContent = rank;
-    roleElement.textContent = role;
-    
-    // Сохраняем новый ранг как исходный для следующего удаления
-    originalRank = rank;
-    
-    // Убираем класс vacant
-    currentCard.classList.remove('vacant');
-    
-    // СОХРАНЯЕМ ДАННЫЕ В LOCALSTORAGE
-    saveAllData();
-    
-    // Закрываем модальное окно
-    closeModal();
-}
-
-// Функция определения исходной должности для карточки
-function getDefaultRankForCard(card) {
-    // Проверяем категорию карточки
-    const category = card.closest('.team-category');
-    if (!category) return 'Без ранга';
-    
-    const categoryTitle = category.querySelector('.category-title').textContent;
-    
-    // Командный состав
-    if (categoryTitle.includes('Командный состав')) {
-        const name = card.querySelector('.member-name').textContent;
-        if (name.includes('Daki') || name.includes('Даки')) {
-            return '6-я Высшая Луна';
-        } else {
-            return '6-я Высшая Луна';
-        }
-    }
-    
-    // Высший состав
-    if (categoryTitle.includes('Высший состав')) {
-        const cards = Array.from(card.parentElement.children);
-        const cardIndex = cards.indexOf(card);
-        
-        // Первая карточка в высшем составе - Ойран Юдзё
-        if (cardIndex === 0) {
-            return 'Ойран Юдзё';
-        }
-        // Вторая карточка в высшем составе - Душигуб Отцуте
-        else if (cardIndex === 1) {
-            return 'Душигуб Отцуте';
-        }
-    }
-    
-    // Основной состав
-    if (categoryTitle.includes('Основной состав')) {
-        const rank = card.querySelector('.member-rank').textContent;
-        if (rank.includes('Юдзё')) {
-            return 'Куртизанка Юдзё';
-        } else if (rank.includes('Отцуте')) {
-            return 'Солдат Отцуте';
-        }
-    }
-    
-    return originalRank || 'Без ранга';
-}
-
-// Функция удаления персонажа
-function removeCharacter() {
-    if (currentCard) {
-        const card = currentCard;
-        const name = card.querySelector('.member-name');
-        const role = card.querySelector('.member-role');
-        const rank = card.querySelector('.member-rank');
-        
-        // Возвращаем карточку в вакантное состояние
-        name.textContent = '[Вакантно]';
-        role.textContent = 'Свободная позиция';
-        
-        // ВОССТАНАВЛИВАЕМ ИСХОДНУЮ ДОЛЖНОСТЬ для этой конкретной ячейки
-        const defaultRank = getDefaultRankForCard(card);
-        rank.textContent = defaultRank;
-        
-        // НЕ МЕНЯЕМ АВАТАР - иконка остается прежней
-        card.classList.add('vacant');
-        
-        // СОХРАНЯЕМ ДАННЫЕ В LOCALSTORAGE
-        saveAllData();
-        
-        closeModal();
-    }
-}
-
-// Функция закрытия модального окна
-function closeModal() {
-    const modal = document.getElementById('characterModal');
-    modal.style.display = 'none';
-    currentCard = null;
-    originalRank = '';
-    
-    // ВОССТАНАВЛИВАЕМ ВЗАИМОДЕЙСТВИЕ СО ВСЕМИ КАРТОЧКАМИ
-    document.querySelectorAll('.member-card').forEach(card => {
-        card.classList.remove('clicked');
-    });
-}
-
-// Функция инициализации карточек
-function initializeCards() {
-    if (cardsInitialized) {
-        // Удаляем все старые обработчики
-        document.querySelectorAll('.member-card').forEach(card => {
-            card.removeEventListener('click', handleCardClick);
-        });
-    }
-    
-    // Добавляем новые обработчики
-    document.querySelectorAll('.member-card').forEach(card => {
-        if (!card.dataset.cardId) {
-            card.dataset.cardId = generateCardId(card);
-        }
-        
-        card.addEventListener('click', handleCardClick);
-    });
-    
-    cardsInitialized = true;
-}
-
-// Обработчик клика по карточке - УПРОЩЕННАЯ ВЕРСИЯ
-function handleCardClick(event) {
-    // Убираем блокировку кликов - используем простой подход
-    openCharacterModal(event.currentTarget);
-}
-
-// Глобальная инициализация
-function initTeamSection() {
-    initializeCards();
-    loadAllData();
-    
-    // Инициализация модального окна
-    const modal = document.getElementById('characterModal');
-    const closeBtn = modal.querySelector('.close');
-    
-    if (closeBtn) {
-        closeBtn.addEventListener('click', closeModal);
-    }
-    
-    // Закрытие по клику вне модального окна
-    window.addEventListener('click', function(event) {
-        if (event.target === modal) {
-            closeModal();
-        }
-    });
-    
-    // Защита от закрытия при клике на саму форму
-    const modalContent = modal.querySelector('.modal-content');
-    if (modalContent) {
-        modalContent.addEventListener('click', function(event) {
-            event.stopPropagation();
-        });
-    }
-}
-
-// Добавляем CSS стили для формы редактирования
-const editStyles = `
-<style>
-.edit-form {
-    padding: 10px 0;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.field-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: var(--text-primary);
-    font-size: 0.9em;
-}
-
-.field-label::after {
-    content: ' *';
-    color: #ff4444;
-    opacity: 0.7;
-}
-
-.field-label:not([for*="required"])::after {
-    content: '';
-}
-
-.edit-input, .edit-textarea {
+    <style>
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
     width: 100%;
-    padding: 12px 16px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));
+    margin: auto;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    width: 90%;
+    max-width: 600px; /* Увеличил ширину */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Центрирование */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    max-height: 80vh; /* Ограничение высоты */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.character-list {
+    max-height: 400px; /* Увеличил высоту списка */
+    overflow-y: auto;
+    margin: 20px 0;
+    flex: 1;
+}
+
+[data-theme="pink"] .modal-content {
+    background: linear-gradient(135deg, #2d1b2d, #451a45) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+.close:hover {
+    color: #fff;
+}
+
+.character-item {
+    padding: 15px;
+    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    color: var(--white);
-    font-size: 1em;
+    cursor: pointer;
     transition: all 0.3s ease;
-    font-family: inherit;
 }
 
-.edit-input::placeholder,
-.edit-textarea::placeholder {
-    color: var(--accent);
+.character-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-color);
+    transform: translateX(5px);
 }
 
-.edit-input:focus, .edit-textarea:focus {
-    outline: none;
-    border-color: var(--gold);
-    background: rgba(255, 255, 255, 0.12);
-    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.1);
+.character-item.selected {
+    background: rgba(255, 215, 0, 0.2); /* Золотой вместо неона */
+    border-color: #ffd700; /* Золотая обводка */
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4); /* Золотое свечение */
 }
 
-.edit-textarea {
-    resize: vertical;
-    min-height: 80px;
+.character-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--text-primary);
+}
+
+.character-description {
+    font-size: 0.9em;
+    color: var(--text-secondary);
 }
 
 .modal-actions {
     display: flex;
     gap: 15px;
-    justify-content: flex-end;
-    margin-top: 25px;
+    justify-content: space-between; /* Разделил кнопки */
+    margin-top: 20px;
     flex-shrink: 0;
 }
 
@@ -3568,9 +2314,8 @@ const editStyles = `
 }
 
 .modal-btn.remove {
-    background: linear-gradient(135deg, #ff4444, #cc0000);
+    background: linear-gradient(135deg, #ff4444, #cc0000); /* Красный для удаления */
     color: white;
-    margin-right: auto;
 }
 
 .modal-btn:hover {
@@ -3587,7 +2332,7 @@ const editStyles = `
 
 .member-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3); /* Золотое свечение */
 }
 
 /* Золотое свечение для заполненных карточек */
@@ -3602,7 +2347,7 @@ const editStyles = `
 }
 
 .member-card.vacant:hover {
-    border: 2px dashed rgba(255, 215, 0, 0.6) !important;
+    border: 2px dashed rgba(255, 215, 0, 0.6) !important; /* Золотая пунктирная линия */
 }
 
 /* Индикатор что карточка заполнена */
@@ -3622,185 +2367,374 @@ const editStyles = `
     font-size: 12px;
     font-weight: bold;
 }
-
-/* УБИРАЕМ защиту от множественных кликов - она вызывает проблемы */
-/* .member-card.clicked {
-    pointer-events: none;
-    opacity: 0.7;
-} */
-
-/* Стили для крестика закрытия модального окна */
-.close {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    color: var(--text-primary);
-    transition: color 0.3s ease;
-    z-index: 1001;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.close:hover {
-    color: var(--gold);
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-}
-
-/* Простая защита от быстрых кликов */
-.member-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.member-card:active {
-    transform: scale(0.98);
-}
 </style>
-`;
-
-// Добавляем стили в документ
-document.head.insertAdjacentHTML('beforeend', editStyles);
-</script>
 
 <script>
-    // Инициализация EmailJS
-    emailjs.init("7aGy-Z3TP6sz-tQ8o");
+// Данные персонажей для разных должностей
+const characters = {
+    // Для Юдзё
+    yujo: [
+        {
+            name: "Акари Танака",
+            description: "Опытная куртизанка с изысканными манерами",
+            rank: "Куртизанка Юдзё"
+        },
+        {
+            name: "Юкимото Сато", 
+            description: "Молодая, но талантливая ученица ойран",
+            rank: "Куртизанка Юдзё"
+        },
+        {
+            name: "Ханако Ито",
+            description: "Специалист по традиционным искусствам",
+            rank: "Куртизанка Юдзё"
+        },
+        {
+            name: "Сакура Накамура",
+            description: "Мастер чайных церемоний и каллиграфии",
+            rank: "Куртизанка Юдзё"
+        },
+        {
+            name: "Рин Ямамото",
+            description: "Искусная танцовщица и музыкант",
+            rank: "Куртизанка Юдзё"
+        }
+    ],
+    // Для Отцуте
+    otsute: [
+        {
+            name: "Кенджи Ватанабе",
+            description: "Опытный пытатель с железной волей",
+            rank: "Солдат Отцуте"
+        },
+        {
+            name: "Такеши Кобаяши", 
+            description: "Специалист по допросам и выбиванию долгов",
+            rank: "Солдат Отцуте"
+        },
+        {
+            name: "Хироши Накамура",
+            description: "Мастер скрытых техник и слежки",
+            rank: "Солдат Отцуте"
+        },
+        {
+            name: "Рюносуке Фудзита",
+            description: "Эксперт по физическим воздействиям",
+            rank: "Солдат Отцуте"
+        },
+        {
+            name: "Масару Йошида",
+            description: "Стратег и тактик отряда Отцуте",
+            rank: "Солдат Отцуте"
+        }
+    ],
+    // Для командного состава
+    command: [
+        {
+            name: "Даки",
+            description: "Командующий под-отрядом Юдзё",
+            rank: "6-я Высшая Луна"
+        },
+        {
+            name: "Гютаро", 
+            description: "Командующий под-отрядом Отцуте",
+            rank: "6-я Высшая Луна"
+        }
+    ],
+    // Для высшего состава
+    highRank: [
+        {
+            name: "Миюки Сато",
+            description: "Опытная ойран, наставница младших куртизанок",
+            rank: "Ойран Юдзё"
+        },
+        {
+            name: "Хаято Ишида", 
+            description: "Главный пытатель, правая рука Гютаро",
+            rank: "Душигуб Отцуте"
+        }
+    ]
+};
+
+let selectedCharacter = null;
+let currentCard = null;
+
+// Функция для определения типа карточки
+function getCardType(card) {
+    const rank = card.querySelector('.member-rank').textContent;
+    const name = card.querySelector('.member-name').textContent;
     
-    function showSection(sectionId) {
-        // Скрываем все секции
-        document.querySelectorAll('.section').forEach(section => {
-            section.style.display = 'none';
-        });
-        
-        // Показываем выбранную секцию
-        const targetSection = document.getElementById(sectionId);
-        if (targetSection) {
-            targetSection.style.display = 'block';
-            targetSection.classList.add('active');
-            
-            // Плавная прокрутка к верху
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-        
-        // Обновляем активную ссылку в навигации
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.classList.remove('active');
-        });
-        
-        // Находим соответствующую ссылку и делаем ее активной
-        const activeLink = document.querySelector(`.nav-link:nth-child(${getNavIndex(sectionId)})`);
-        if (activeLink) {
-            activeLink.classList.add('active');
-        }
-
-        // Запускаем анимацию прогресс-баров при переходе в раздел рангов
-        if (sectionId === 'ranks') {
-            setTimeout(animateProgressBars, 500);
-        }
-        
-        // Инициализируем раздел команды
-        if (sectionId === 'team') {
-            setTimeout(initTeamSection, 100);
-        }
+    if (name.includes('Daki') || name.includes('Gyutaro') || name.includes('Даки') || name.includes('Гютаро')) {
+        return 'command';
+    } else if (rank.includes('Ойран') || rank.includes('Душигуб')) {
+        return 'highRank';
+    } else if (rank.includes('Юдзё')) {
+        return 'yujo';
+    } else if (rank.includes('Отцуте')) {
+        return 'otsute';
     }
+    return 'yujo'; // по умолчанию
+}
 
-    function getNavIndex(sectionId) {
-        const sections = ['main', 'ranks', 'rules', 'team', 'application'];
-        return sections.indexOf(sectionId) + 1;
+// Функция для открытия модального окна
+function openCharacterModal(card) {
+    currentCard = card;
+    const modal = document.getElementById('characterModal');
+    const characterList = document.querySelector('.character-list');
+    const cardType = getCardType(card);
+    const isVacant = card.classList.contains('vacant');
+    
+    // Заполняем список персонажей в зависимости от типа карточки
+    characterList.innerHTML = '';
+    characters[cardType].forEach((char, index) => {
+        const charItem = document.createElement('div');
+        charItem.className = 'character-item';
+        charItem.innerHTML = `
+            <div class="character-name">${char.name}</div>
+            <div class="character-description">${char.description}</div>
+            <div class="character-rank" style="font-size: 0.8em; color: var(--accent-color); margin-top: 5px;">${char.rank}</div>
+        `;
+        charItem.addEventListener('click', () => selectCharacter(char, charItem));
+        characterList.appendChild(charItem);
+    });
+    
+    // Обновляем кнопки в зависимости от состояния карточки
+    updateModalActions(isVacant);
+    
+    modal.style.display = 'block';
+    selectedCharacter = null;
+}
+
+// Функция обновления кнопок в модальном окне
+function updateModalActions(isVacant) {
+    const actionsContainer = document.querySelector('.modal-actions');
+    
+    if (isVacant) {
+        // Для вакантных карточек - только выбор и отмена
+        actionsContainer.innerHTML = `
+            <button class="modal-btn cancel">Отмена</button>
+            <button class="modal-btn confirm">Выбрать</button>
+        `;
+    } else {
+        // Для заполненных карточек - удаление и отмена
+        actionsContainer.innerHTML = `
+            <button class="modal-btn remove">Удалить</button>
+            <button class="modal-btn cancel">Отмена</button>
+        `;
     }
+    
+    // Добавляем обработчики для новых кнопок
+    document.querySelector('.modal-btn.cancel')?.addEventListener('click', closeModal);
+    document.querySelector('.modal-btn.confirm')?.addEventListener('click', applyCharacterSelection);
+    document.querySelector('.modal-btn.remove')?.addEventListener('click', removeCharacter);
+}
 
-    function animateProgressBars() {
-        const progressBars = document.querySelectorAll('.progress-bar');
+// Функция выбора персонажа
+function selectCharacter(character, element) {
+    // Снимаем выделение со всех элементов
+    document.querySelectorAll('.character-item').forEach(item => {
+        item.classList.remove('selected');
+    });
+    
+    // Выделяем выбранный элемент
+    element.classList.add('selected');
+    selectedCharacter = character;
+}
+
+// Функция применения выбора
+function applyCharacterSelection() {
+    if (selectedCharacter && currentCard) {
+        const card = currentCard;
+        const avatar = card.querySelector('.member-avatar');
+        const rank = card.querySelector('.member-rank');
+        const name = card.querySelector('.member-name');
+        const role = card.querySelector('.member-role');
         
-        progressBars.forEach(bar => {
-            const width = bar.style.width;
-            bar.style.width = '0';
-            setTimeout(() => {
-                bar.style.width = width;
-            }, 100);
-        });
+        // Обновляем карточку
+        avatar.innerHTML = '<i class="fas fa-user"></i>';
+        rank.textContent = selectedCharacter.rank;
+        name.textContent = selectedCharacter.name;
+        role.textContent = selectedCharacter.description;
+        
+        // Убираем класс vacant
+        card.classList.remove('vacant');
+        
+        // Закрываем модальное окно
+        closeModal();
     }
+}
 
-    function showSuccess() {
-        document.getElementById('successMessage').style.display = 'block';
-        document.getElementById('applicationForm').style.display = 'none';
-        document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+// Функция удаления персонажа с карточки
+function removeCharacter() {
+    if (currentCard) {
+        const card = currentCard;
+        const name = card.querySelector('.member-name');
+        const role = card.querySelector('.member-role');
+        
+        // Возвращаем карточку в вакантное состояние
+        name.textContent = '[Вакантно]';
+        role.textContent = 'Свободная позиция';
+        card.classList.add('vacant');
+        
+        // Закрываем модальное окно
+        closeModal();
     }
+}
 
-    // Валидация текстовых полей
-    const textareas = document.querySelectorAll('textarea');
-    textareas.forEach(textarea => {
-        textarea.addEventListener('input', function() {
-            if (this.value.length < 50 && this.hasAttribute('required')) {
-                this.style.borderColor = '#ff4444';
-            } else {
-                this.style.borderColor = 'rgba(255, 255, 255, 0.2)';
-            }
+// Функция закрытия модального окна
+function closeModal() {
+    const modal = document.getElementById('characterModal');
+    modal.style.display = 'none';
+    selectedCharacter = null;
+    currentCard = null;
+}
+
+// Добавляем обработчики событий после загрузки DOM
+document.addEventListener('DOMContentLoaded', function() {
+    // Обработчики для модального окна
+    document.querySelector('.close')?.addEventListener('click', closeModal);
+    
+    // Закрытие модального окна при клике вне его
+    window.addEventListener('click', function(event) {
+        const modal = document.getElementById('characterModal');
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+    
+    // Добавляем обработчики клика на ВСЕ карточки
+    document.querySelectorAll('.member-card').forEach(card => {
+        card.addEventListener('click', function() {
+            openCharacterModal(this);
         });
     });
+});
+</script>
 
-    // Инициализация при загрузке
-    document.addEventListener('DOMContentLoaded', function() {
-        // Показываем главную страницу по умолчанию
-        showSection('main');
+    <script>
+        // Инициализация EmailJS
+        emailjs.init("7aGy-Z3TP6sz-tQ8o");
         
-        const themeBtns = document.querySelectorAll('.theme-btn');
-        const currentTheme = localStorage.getItem('theme') || 'dark';
-        
-        // Устанавливаем текущую тему
-        document.documentElement.setAttribute('data-theme', currentTheme);
-        
-        // Активируем соответствующую кнопку
-        themeBtns.forEach(btn => {
-            if (btn.dataset.theme === currentTheme) {
-                btn.classList.add('active');
-            } else {
-                btn.classList.remove('active');
-            }
-        });
-        
-        // Обработчики переключения
-        themeBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                const theme = this.dataset.theme;
-                
-                // Меняем тему
-                document.documentElement.setAttribute('data-theme', theme);
-                localStorage.setItem('theme', theme);
-                
-                // Обновляем кнопки
-                themeBtns.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
+        function showSection(sectionId) {
+            // Скрываем все секции
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.display = 'none';
             });
-        });
-        
-        // Анимация появления элементов при скролле
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+            
+            // Показываем выбранную секцию
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+                targetSection.classList.add('active');
+                
+                // Плавная прокрутка к верху
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+            
+            // Обновляем активную ссылку в навигации
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Находим соответствующую ссылку и делаем ее активной
+            const activeLink = document.querySelector(`.nav-link:nth-child(${getNavIndex(sectionId)})`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+
+            // Запускаем анимацию прогресс-баров при переходе в раздел рангов
+            if (sectionId === 'ranks') {
+                setTimeout(animateProgressBars, 500);
+            }
+        }
+
+        function getNavIndex(sectionId) {
+            const sections = ['main', 'ranks', 'rules', 'team', 'application'];
+            return sections.indexOf(sectionId) + 1;
+        }
+
+        function animateProgressBars() {
+            const progressBars = document.querySelectorAll('.progress-bar');
+            
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        }
+
+        function showSuccess() {
+            document.getElementById('successMessage').style.display = 'block';
+            document.getElementById('applicationForm').style.display = 'none';
+            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+        }
+
+
+        // Валидация текстовых полей
+        const textareas = document.querySelectorAll('textarea');
+        textareas.forEach(textarea => {
+            textarea.addEventListener('input', function() {
+                if (this.value.length < 50 && this.hasAttribute('required')) {
+                    this.style.borderColor = '#ff4444';
+                } else {
+                    this.style.borderColor = 'rgba(255, 255, 255, 0.2)';
                 }
             });
-        }, { threshold: 0.1 });
-
-        // Наблюдаем за всеми анимируемыми элементами
-        document.querySelectorAll('.feature-card, .rank-card, .activity-item, .rule-card, .member-card, .blood-limit-card').forEach(el => {
-            observer.observe(el);
         });
-        
-        // Инициализируем раздел команды при загрузке, если он активен
-        if (document.getElementById('team').style.display === 'block') {
-            setTimeout(initTeamSection, 100);
-        }
-    });
-</script>
+
+        // Инициализация при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            // Показываем главную страницу по умолчанию
+            showSection('main');
+            
+            const themeBtns = document.querySelectorAll('.theme-btn');
+            const currentTheme = localStorage.getItem('theme') || 'dark';
+            
+            // Устанавливаем текущую тему
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            
+            // Активируем соответствующую кнопку
+            themeBtns.forEach(btn => {
+                if (btn.dataset.theme === currentTheme) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            
+            // Обработчики переключения
+            themeBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const theme = this.dataset.theme;
+                    
+                    // Меняем тему
+                    document.documentElement.setAttribute('data-theme', theme);
+                    localStorage.setItem('theme', theme);
+                    
+                    // Обновляем кнопки
+                    themeBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Анимация появления элементов при скролле
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            // Наблюдаем за всеми анимируемыми элементами
+            document.querySelectorAll('.feature-card, .rank-card, .activity-item, .rule-card, .member-card, .blood-limit-card').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
 
     <!-- WebGL Background Script -->
     <script>
@@ -4110,265 +3044,6 @@ function updateRankIcons(theme) {
         }
     });
 }
-
-// Discord OAuth2 конфигурация
-const DISCORD_CLIENT_ID = '1442293803972165813'; // Замените на ваш Client ID
-const DISCORD_REDIRECT_URI = window.location.origin + window.location.pathname;
-const DISCORD_SCOPE = 'identify';
-
-// Роли пользователей
-const USER_ROLES = {
-    READER: 'reader',
-    EDITOR: 'editor'
-};
-
-// Текущий пользователь
-let currentUser = null;
-
-// Инициализация при загрузке страницы
-document.addEventListener('DOMContentLoaded', function() {
-    checkAuthStatus();
-    setupAuthHandlers();
-});
-
-// Проверка статуса аутентификации
-function checkAuthStatus() {
-    const token = localStorage.getItem('discord_token');
-    const userData = localStorage.getItem('discord_user');
-    
-    if (token && userData) {
-        currentUser = JSON.parse(userData);
-        updateAuthUI();
-        
-        // Если пользователь редактор, показываем панель администратора
-        if (currentUser.role === USER_ROLES.EDITOR) {
-            document.getElementById('adminPanel').style.display = 'block';
-            loadUserManagement();
-        }
-    }
-}
-
-// Настройка обработчиков аутентификации
-function setupAuthHandlers() {
-    document.getElementById('loginBtn').addEventListener('click', loginWithDiscord);
-    
-    // Обработка OAuth callback
-    const urlParams = new URLSearchParams(window.location.search);
-    const code = urlParams.get('code');
-    
-    if (code) {
-        handleOAuthCallback(code);
-    }
-}
-
-// Вход через Discord
-function loginWithDiscord() {
-    const authUrl = `https://discord.com/api/oauth2/authorize?client_id=${DISCORD_CLIENT_ID}&redirect_uri=${encodeURIComponent(DISCORD_REDIRECT_URI)}&response_type=code&scope=${DISCORD_SCOPE}`;
-    window.location.href = authUrl;
-}
-
-// Обработка OAuth callback
-async function handleOAuthCallback(code) {
-    try {
-        // В реальном приложении здесь должен быть запрос к вашему серверу
-        // Для демонстрации используем localStorage
-        
-        // Получаем access token (в реальном приложении через ваш бэкенд)
-        // const response = await fetch('/api/discord/token', {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify({ code, redirect_uri: DISCORD_REDIRECT_URI })
-        // });
-        // const { access_token } = await response.json();
-        
-        // Для демо просто сохраняем код как токен
-        const access_token = code;
-        localStorage.setItem('discord_token', access_token);
-        
-        // Получаем данные пользователя
-        // const userResponse = await fetch('/api/discord/user', {
-        //     headers: { 'Authorization': `Bearer ${access_token}` }
-        // });
-        // const userData = await userResponse.json();
-        
-        // Для демо создаем фиктивные данные пользователя
-        const userData = {
-            id: generateRandomId(),
-            username: 'DemoUser',
-            discriminator: '1234',
-            avatar: null,
-            role: USER_ROLES.READER // По умолчанию все читатели
-        };
-        
-        // Сохраняем пользователя
-        localStorage.setItem('discord_user', JSON.stringify(userData));
-        currentUser = userData;
-        
-        // Обновляем UI и убираем код из URL
-        updateAuthUI();
-        window.history.replaceState({}, document.title, window.location.pathname);
-        
-    } catch (error) {
-        console.error('Ошибка аутентификации:', error);
-        alert('Ошибка при входе через Discord');
-    }
-}
-
-// Выход из системы
-function logout() {
-    localStorage.removeItem('discord_token');
-    localStorage.removeItem('discord_user');
-    currentUser = null;
-    updateAuthUI();
-    document.getElementById('adminPanel').style.display = 'none';
-}
-
-// Обновление UI аутентификации
-function updateAuthUI() {
-    const authContainer = document.getElementById('authContainer');
-    
-    if (currentUser) {
-        authContainer.innerHTML = `
-            <div class="user-panel">
-                <img src="${currentUser.avatar ? `https://cdn.discordapp.com/avatars/${currentUser.id}/${currentUser.avatar}.png` : 'https://cdn.discordapp.com/embed/avatars/0.png'}" 
-                     class="user-avatar" alt="Аватар">
-                <div class="user-info">
-                    <div class="username">${currentUser.username}</div>
-                    <div class="user-role">
-                        <span class="${currentUser.role === USER_ROLES.EDITOR ? 'editor-badge' : 'reader-badge'}">
-                            ${currentUser.role === USER_ROLES.EDITOR ? 'Редактор' : 'Читатель'}
-                        </span>
-                    </div>
-                </div>
-                <button class="logout-btn" id="logoutBtn" title="Выйти">
-                    <i class="fas fa-sign-out-alt"></i>
-                </button>
-            </div>
-        `;
-        
-        document.getElementById('logoutBtn').addEventListener('click', logout);
-        
-        // Показываем/скрываем элементы в зависимости от роли
-        toggleEditorFeatures(currentUser.role === USER_ROLES.EDITOR);
-        
-    } else {
-        authContainer.innerHTML = `
-            <button class="auth-btn" id="loginBtn">
-                <i class="fab fa-discord"></i> Войти через Discord
-            </button>
-        `;
-        document.getElementById('loginBtn').addEventListener('click', loginWithDiscord);
-        
-        // Скрываем элементы для редакторов
-        toggleEditorFeatures(false);
-    }
-}
-
-// Включение/выключение функций для редакторов
-function toggleEditorFeatures(isEditor) {
-    // Здесь можно добавить логику для показа/скрытия элементов интерфейса
-    // доступных только редакторам
-    
-    // Например, кнопки редактирования в карточках услуг
-    const editButtons = document.querySelectorAll('.edit-price-btn, .edit-service-btn');
-    editButtons.forEach(btn => {
-        btn.style.display = isEditor ? 'inline-block' : 'none';
-    });
-}
-
-// Загрузка управления пользователями (для редакторов)
-function loadUserManagement() {
-    // В реальном приложении здесь будет запрос к API
-    // Для демо используем localStorage
-    
-    const users = JSON.parse(localStorage.getItem('site_users') || '[]');
-    
-    // Добавляем текущего пользователя если его нет в списке
-    if (currentUser && !users.find(u => u.id === currentUser.id)) {
-        users.push(currentUser);
-        localStorage.setItem('site_users', JSON.stringify(users));
-    }
-    
-    updateUserList(users);
-    updateStats(users);
-}
-
-// Обновление списка пользователей
-function updateUserList(users) {
-    const userList = document.getElementById('userList');
-    userList.innerHTML = '';
-    
-    users.forEach(user => {
-        const userItem = document.createElement('div');
-        userItem.className = 'user-item';
-        userItem.innerHTML = `
-            <div class="user-item-info">
-                <img src="${user.avatar ? `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png` : 'https://cdn.discordapp.com/embed/avatars/0.png'}" 
-                     class="user-item-avatar" alt="Аватар">
-                <div class="user-item-name">${user.username}</div>
-            </div>
-            <select class="role-select" data-user-id="${user.id}">
-                <option value="${USER_ROLES.READER}" ${user.role === USER_ROLES.READER ? 'selected' : ''}>Читатель</option>
-                <option value="${USER_ROLES.EDITOR}" ${user.role === USER_ROLES.EDITOR ? 'selected' : ''}>Редактор</option>
-            </select>
-        `;
-        userList.appendChild(userItem);
-    });
-    
-    // Обработчик сохранения ролей
-    document.getElementById('saveRolesBtn').addEventListener('click', saveUserRoles);
-}
-
-// Сохранение ролей пользователей
-function saveUserRoles() {
-    const roleSelects = document.querySelectorAll('.role-select');
-    const users = JSON.parse(localStorage.getItem('site_users') || '[]');
-    
-    roleSelects.forEach(select => {
-        const userId = select.dataset.userId;
-        const newRole = select.value;
-        
-        const user = users.find(u => u.id === userId);
-        if (user) {
-            user.role = newRole;
-        }
-        
-        // Обновляем текущего пользователя если это он
-        if (currentUser && currentUser.id === userId) {
-            currentUser.role = newRole;
-            localStorage.setItem('discord_user', JSON.stringify(currentUser));
-            updateAuthUI();
-        }
-    });
-    
-    localStorage.setItem('site_users', JSON.stringify(users));
-    updateStats(users);
-    alert('Роли пользователей обновлены!');
-}
-
-// Обновление статистики
-function updateStats(users) {
-    document.getElementById('totalUsers').textContent = users.length;
-    document.getElementById('editorCount').textContent = users.filter(u => u.role === USER_ROLES.EDITOR).length;
-    document.getElementById('readerCount').textContent = users.filter(u => u.role === USER_ROLES.READER).length;
-}
-
-// Вспомогательная функция для генерации ID
-function generateRandomId() {
-    return Math.random().toString(36).substring(2) + Date.now().toString(36);
-}
-
     </script>
-
-      <!-- Модальное окно для выбора персонажей -->
-    <div id="characterModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Выберите персонажа</h2>
-            <div class="character-list">
-                <!-- Список будет заполняться JavaScript -->
-            </div>
-        </div>
-    </div>
 </body>
 </html>
